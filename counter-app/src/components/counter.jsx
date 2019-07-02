@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prev props", prevProps);
+    console.log("prev state", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      //Ajax call and get new data from server
+    }
+  }
+  componentWillUnmount() {
+    console.log("Counter - Unmount");
+  }
   render() {
     return (
       <div>
